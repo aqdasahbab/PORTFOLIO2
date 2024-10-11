@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Aqdas' Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css" media="screen and (min-width: 320px)">
+</head>
+<body>
+
+    <!-- Entry Section -->
+    <section id="entry">
+        <div class="entry-content">
+            <h1 class="entry-title animate-title">Hello, Welcome to My Space</h1>
+            <p class="entry-subtitle animate-subtitle">Aspiring AI/ML Engineer | Passionate about Innovation</p>
+            <a href="#home" class="btn entry-btn">Explore Now</a>
+        </div>
+    </section>
+
+    <!-- Navigation Bar -->
+    <nav>
+        <div class="nav-container">
+            <div class="logo">
+                <a href="#home">PORTFOLIO</a>
+            </div>
+            <div class="menu-icon" onclick="toggleMenu()">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#work">Work</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Home Section -->
+    <section id="home">
+        <div class="intro">
+            <img src="your-image.jpg" alt="Aqdas" class="profile-img">
+            <h1 class="home-title animate-title">Hi, I'm Aqdas</h1>
+            <p class="home-subtitle animate-subtitle">Aspiring AIML Engineer</p>
+            <a href="#work" class="btn">See My Work</a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <h2 class="animate-title">About Me</h2>
+        <p>Aspiring AI/ML Engineer | Passionate about Data and Innovation</p>
+        <p>I'm an enthusiastic AI/ML engineer, dedicated to learning and growing in the rapidly evolving world of artificial intelligence and machine learning. My journey in AIML started with a deep fascination for how data can transform industries, enhance decision-making, and solve real-world challenges.</p>
+        <p>Currently, I am focusing on expanding my skills in machine learning algorithms, deep learning techniques, and data analysis. I actively engage in projects and hackathons that push the boundaries of my knowledge, allowing me to apply innovative approaches to problem-solving.</p>
+        <p>My goal is to continuously learn, innovate, and contribute to the development of cutting-edge AI solutions that have a meaningful impact on businesses and society. With a strong foundation in math and programming, I am excited to explore new opportunities that allow me to collaborate with like-minded professionals and grow my expertise in AIML.</p>
+        <p>Let’s connect and explore how we can leverage AI to drive the future!</p>
+    </section>
+
+    <!-- Work Section -->
+    <section id="work">
+        <h2 class="animate-title">My Work</h2>
+        <div class="work-gallery">
+            <div class="work-item">
+                <h3>Project 1</h3>
+                <p>Description of project 1.</p>
+            </div>
+            <div class="work-item">
+                <h3>Project 2</h3>
+                <p>Description of project 2.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <h2 class="animate-title">Contact Me</h2>
+        <p>If you would like to connect, feel free to reach out!</p>
+        <a href="mailto:aqdas@example.com" class="btn">Email Me</a>
+    </section>
+
+    <!-- JavaScript to Toggle Mobile Menu -->
+    <script>
+        function toggleMenu() {
+            const navLinks = document.querySelector('.nav-links');
+            navLinks.classList.toggle('active');
+        }
+
+        // Smooth scrolling on navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Scroll animations for entrance
+        const animateElements = document.querySelectorAll('.animate-title, .animate-subtitle');
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate-in');
+                }
+            });
+        });
+
+        animateElements.forEach(el => {
+            observer.observe(el);
+        });
+    </script>
+
+</body>
+</html>
